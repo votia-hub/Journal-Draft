@@ -140,7 +140,7 @@ PKCS7 padding is needed because AES requires inputs to be exact multiples of 16 
 
 ## Reflection
 
-The XOR calculation was straightforward once I remembered the truth table. The SBC exercises were tedious but very valuable — working through CBC and CTR manually made me understand *why* modes of operation exist, not just memorise their names.
+The XOR calculation was straightforward once I remembered the truth table. The SBC exercises were tedious but very valuable working through CBC and CTR manually made me understand *why* modes of operation exist, not just memorise their names.
 
 The most challenging part was keeping track of which value was chained into the next block during CBC. I made XOR mistakes initially by confusing bit positions. Going slowly, bit by bit, fixed that.
 
