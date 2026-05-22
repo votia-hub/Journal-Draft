@@ -66,7 +66,7 @@ HMAC is used as the MAC function with a chosen hash algorithm.
 
 **Difference between hash and HMAC:**
 - A plain hash like SHA256(message) provides integrity but NOT authentication — anyone can compute it
-- An HMAC requires a secret key — only parties sharing the key can produce a valid tag
+- An HMAC requires a secret key only parties sharing the key can produce a valid tag
 - This provides both integrity AND authentication
 
 **What happens if message is modified:**
@@ -107,7 +107,7 @@ python mac-receiver.py
 
 ## Reflection
 
-This week clarified an important distinction I had been fuzzy on — the difference between hashing for integrity and HMAC for authentication.
+This week clarified an important distinction I had been fuzzy on the difference between hashing for integrity and HMAC for authentication.
 
 A hash alone tells you the message has not been corrupted, but an attacker can simply recompute the hash after modifying the message. An HMAC requires the secret key, so an attacker cannot produce a valid tag for a tampered message.
 
@@ -115,7 +115,7 @@ The hands-on test of modifying messages and seeing verification fail made this v
 
 I also found it interesting that the verify() method uses constant-time comparison to prevent timing attacks — a naive comparison returning early on first mismatch would leak information about how many bytes match.
 
-The key distribution problem also became clear — HMAC requires both parties to already share a secret key. This is exactly what Diffie-Hellman from Week 6 solves, linking all the pieces together.
+The key distribution problem also became clear HMAC requires both parties to already share a secret key. This is exactly what Diffie-Hellman from Week 6 solves, linking all the pieces together.
 
 Now here's week09.md — copy everything below:
 
