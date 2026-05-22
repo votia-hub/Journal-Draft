@@ -144,4 +144,4 @@ The XOR calculation was straightforward once I remembered the truth table. The S
 
 The most challenging part was keeping track of which value was chained into the next block during CBC. I made XOR mistakes initially by confusing bit positions. Going slowly, bit by bit, fixed that.
 
-The Python AES code was easier than expected. My initial mistake was forgetting PKCS7 padding — AES requires block-aligned input and crashes without it. In comparing all three modes, I now understand why ECB is never used and why CTR (and GCM built on it) is preferred in modern protocols like TLS 1.3.
+The Python AES code was easier than expected. My initial mistake was forgetting PKCS7 padding AES requires block-aligned input and crashes without it. In comparing all three modes, I now understand why ECB is never used and why CTR (and GCM built on it) is preferred in modern protocols like TLS 1.3.
