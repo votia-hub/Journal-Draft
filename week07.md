@@ -139,10 +139,10 @@ I typed a test message in the client terminal and it appeared on the server, con
 
 ## Reflection
 
-This week was the most practical so far — seeing real network packets and recognising the cryptographic components we studied (DH key exchange, RSA certificates, AES cipher suites) made everything feel concrete.
+This week was the most practical so far seeing real network packets and recognising the cryptographic components we studied (DH key exchange, RSA certificates, AES cipher suites) made everything feel concrete.
 
 The biggest insight was understanding why TLS 1.3 is faster. The client sends its ECDH public key speculatively in the first message, allowing the server to derive keys immediately without an extra round trip. TLS 1.2 needed a separate ServerKeyExchange message first.
 
 I was also surprised that TLS 1.3 encrypts the Certificate message. In TLS 1.2 it was plaintext, meaning a passive observer could see which website a client was connecting to from the certificate CommonName. TLS 1.3 hides this too.
 
-The cloud VM setup was straightforward but I forgot to open the firewall port initially — a simple but real security lesson. Default-deny firewall rules are the correct security posture.
+The cloud VM setup was straightforward but I forgot to open the firewall port initially a simple but real security lesson. Default-deny firewall rules are the correct security posture.
