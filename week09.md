@@ -138,6 +138,6 @@ The certificate analysis was the most interesting task. I had known abstractly t
 
 The most important insight: no single cryptographic algorithm does everything. AES can encrypt but not exchange keys. RSA can sign but not efficiently encrypt large data. DH can establish secrets but not authenticate. The genius of TLS is combining all of them so each one does what it does best.
 
-The RSA signing code on my computer confirmed this — generating a 2048-bit key, signing a message, and verifying the signature all worked correctly, showing how digital signatures work in practice exactly as described in the TLS certificate chain.
+The RSA signing code on my computer confirmed this generating a 2048-bit key, signing a message, and verifying the signature all worked correctly, showing how digital signatures work in practice exactly as described in the TLS certificate chain.
 
 
