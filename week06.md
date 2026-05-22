@@ -108,8 +108,8 @@ This week was conceptually the most interesting so far. The DHKE algorithm seems
 
 The key mathematical insight is:
 (g^a)^b mod p = g^(ab) mod p = (g^b)^a mod p
-The order of operations does not matter — both sides arrive at the same value.
+The order of operations does not matter both sides arrive at the same value.
 
-The MITM attack analysis was particularly enlightening. DHKE alone provides no authentication — it only protects against passive eavesdroppers. Authentication requires certificates, which is exactly what Week 9 covers. This explains the complete TLS design: DHKE for the secret + RSA certificate for authentication.
+The MITM attack analysis was particularly enlightening. DHKE alone provides no authentication it only protects against passive eavesdroppers. Authentication requires certificates, which is exactly what Week 9 covers. This explains the complete TLS design: DHKE for the secret + RSA certificate for authentication.
 
 I also noticed that OpenSSL's dhparam command took several seconds to generate 2048-bit parameters because finding a large prime is computationally expensive. This is why TLS servers use pre-defined named groups rather than generating fresh parameters each time.
