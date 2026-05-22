@@ -138,8 +138,8 @@ This week was the most mathematically complex so far. I made two key mistakes:
 
 1. My first choices of e (3, 5, 7) all failed because they shared common factors with Φ(n) = 39900. This taught me that e must be coprime with Φ(n), not just any small odd number.
 
-2. I initially typed pow(e, -1, n) instead of pow(e, -1, phi) in Python — using n instead of Φ(n) gives the wrong answer entirely.
+2. I initially typed pow(e, -1, n) instead of pow(e, -1, phi) in Python using n instead of Φ(n) gives the wrong answer entirely.
 
-The most interesting insight was understanding why OpenSSL uses e = 65537 instead of a tiny number. Small e values can be exploited — if the same message M is sent to three people all using e = 3, an attacker can use the Chinese Remainder Theorem to recover M without breaking RSA at all. Using e = 65537 avoids this.
+The most interesting insight was understanding why OpenSSL uses e = 65537 instead of a tiny number. Small e values can be exploited if the same message M is sent to three people all using e = 3, an attacker can use the Chinese Remainder Theorem to recover M without breaking RSA at all. Using e = 65537 avoids this.
 
-The practical limitation of RSA (can only encrypt data smaller than the key size) also clarified why TLS uses RSA for key exchange only and AES for bulk data — hybrid encryption combines the best of both worlds.
+The practical limitation of RSA (can only encrypt data smaller than the key size) also clarified why TLS uses RSA for key exchange only and AES for bulk data hybrid encryption combines the best of both worlds.
